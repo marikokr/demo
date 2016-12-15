@@ -9,17 +9,44 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var logInOutButton: UIButton!
+    
+    // Text strings
+    let loginPrompt  = "Log in"
+    let logoutPrompt = "Log out"
+    
+    // Variables
+    var isLoggedIn = false
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        print ("ViewController did load")
+        updateLogInOutButtonTitle()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
+    @IBAction func logInOutButtonTapped(_ sender: Any) {
+        print("LogInOutButton was tapped")
+        if isLoggedIn {
+            isLoggedIn = false
+            // Here we log out
+        } else {
+            isLoggedIn = true
+            // Here we log in
+        }
+        updateLogInOutButtonTitle()
+    }
+    
+    func updateLogInOutButtonTitle() {
+        if isLoggedIn {
+            logInOutButton.setTitle(logoutPrompt, for: .normal)
+        } else {
+            logInOutButton.setTitle(loginPrompt, for: .normal)
+        }
+    }
 
 }
 
