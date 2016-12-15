@@ -30,6 +30,7 @@ class ViewController: UIViewController {
 
     @IBAction func logInOutButtonTapped(_ sender: Any) {
         print("LogInOutButton was tapped")
+        // This is a small bug fix
         if isLoggedIn {
             isLoggedIn = false
             // Here we log out
