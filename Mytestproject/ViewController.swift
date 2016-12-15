@@ -47,6 +47,8 @@ class ViewController: UIViewController {
         } else {
             logInOutButton.setTitle(loginPrompt, for: .normal)
         }
+        // NEW FEATURE
+        // blabla
     }
 
 }
